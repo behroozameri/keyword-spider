@@ -153,13 +153,25 @@ Useful options:
 
 Persistent profiles default to `~/.spider-crawler`, outside the repository. Profiles, recordings, build artifacts, and generated result files are excluded from Git.
 
+## Record a product demo
+
+Create a privacy-safe square MP4 for a social post using the bundled synthetic demo page:
+
+```bash
+python scripts/record_demo.py
+```
+
+The command records a 1080 × 1080 Chromium session and creates `videos/keyword-spider-linkedin-demo.mp4`. It requires FFmpeg and never includes a real account, private page, or external website.
+
 ## Project structure
 
 ```text
 engine/spider.js            Extraction, results UI, scrolling, and animation engine
 extension/                  Popup, browser adapters, styles, and icons
 sites/                      Playwright-specific adapters
+demo/                       Privacy-safe product demo page
 scripts/build_extension.py  Clean extension package builder
+scripts/record_demo.py      Square MP4 product-demo recorder
 scripts/run_tests.py        Cross-platform test runner
 tests/                      Browser integration and popup tests
 manifest.json               Chrome and Firefox Manifest V3 configuration

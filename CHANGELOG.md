@@ -6,6 +6,10 @@ The project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Privacy-safe synthetic demo page and a 1080 × 1080 MP4 recorder for product announcements and store media.
+
 ## [1.0.0] - 2026-10-17
 
 ### Added

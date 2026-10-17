@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A privacy-first keyword explorer that reveals the ideas shaping modern software teams.">
+    <title>Building Calm, Reliable AI Systems</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #f7f3ff;
+        background: #09070e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        min-width: 760px;
+        margin: 0;
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 12% 4%, rgba(133, 76, 255, 0.28), transparent 28rem),
+          radial-gradient(circle at 65% 27%, rgba(39, 224, 188, 0.12), transparent 25rem),
+          #09070e;
+      }
+
+      .recording-intro {
+        position: fixed;
+        z-index: 2147483646;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(135, 74, 238, 0.32), transparent 26rem),
+          #09070e;
+        animation: intro-exit 700ms cubic-bezier(0.65, 0, 0.35, 1) 1700ms forwards;
+      }
+
+      .intro-content {
+        width: min(760px, calc(100% - 96px));
+        text-align: center;
+      }
+
+      .intro-mark {
+        display: grid;
+        width: 92px;
+        height: 92px;
+        margin: 0 auto 30px;
+        place-items: center;
+        border: 1px solid rgba(195, 157, 255, 0.5);
+        border-radius: 28px;
+        color: #caa9ff;
+        background: linear-gradient(145deg, rgba(154, 91, 255, 0.25), rgba(75, 255, 205, 0.08));
+        box-shadow: 0 0 70px rgba(147, 82, 255, 0.28);
+        font-size: 37px;
+      }
+
+      .recording-intro h1 {
+        margin: 0;
+        font-size: 78px;
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+
+      .recording-intro p {
+        margin: 24px 0 30px;
+        color: #c8bed2;
+        font-size: 25px;
+      }
+
+      .intro-pill {
+        display: inline-block;
+        padding: 10px 14px;
+        border: 1px solid rgba(108, 247, 207, 0.3);
+        border-radius: 999px;
+        color: #91f4d4;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      @keyframes intro-exit {
+        to {
+          visibility: hidden;
+          opacity: 0;
+          transform: scale(1.025);
+        }
+      }
+
+      .demo-label {
+        position: absolute;
+        z-index: 2;
+        top: 24px;
+        left: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 12px;
+        border: 1px solid rgba(132, 247, 216, 0.28);
+        border-radius: 999px;
+        color: #a8ffe5;
+        background: rgba(7, 12, 14, 0.72);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        backdrop-filter: blur(14px);
+      }
+
+      .demo-label::before {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #50f1bd;
+        box-shadow: 0 0 14px #50f1bd;
+        content: "";
+      }
+
+      main {
+        width: calc(100% - 360px);
+        min-width: 650px;
+      }
+
+      .hero {
+        min-height: 820px;
+        padding: 158px 64px 84px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .eyebrow {
+        margin: 0 0 26px;
+        color: #b89aff;
+        font-size: 14px;
+        font-weight: 780;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 670px;
+        margin: 0;
+        font-size: clamp(64px, 7.2vw, 92px);
+        line-height: 0.96;
+        letter-spacing: -0.065em;
+      }
+
+      .hero strong {
+        color: #7df5ce;
+        font-weight: inherit;
+      }
+
+      .lead {
+        max-width: 650px;
+        margin: 38px 0 0;
+        color: #c8bed2;
+        font-size: 23px;
+        line-height: 1.55;
+      }
+
+      .privacy-chip {
+        display: inline-flex;
+        gap: 9px;
+        align-items: center;
+        margin-top: 44px;
+        padding: 12px 16px;
+        border: 1px solid rgba(177, 126, 255, 0.3);
+        border-radius: 12px;
+        color: #e7dcff;
+        background: rgba(101, 55, 165, 0.18);
+        font-size: 13px;
+      }
+
+      .section {
+        min-height: 690px;
+        padding: 96px 64px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .section-number {
+        color: #8067a5;
+        font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.12em;
+      }
+
+      h2 {
+        max-width: 650px;
+        margin: 20px 0 30px;
+        font-size: 48px;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+
+      .section p {
+        max-width: 650px;
+        margin: 0 0 24px;
+        color: #bbb2c5;
+        font-size: 20px;
+        line-height: 1.65;
+      }
+
+      .section strong {
+        color: #f8f4ff;
+      }
+
+      .signal-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 650px;
+        margin-top: 38px;
+      }
+
+      .signal {
+        min-height: 118px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 16px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
+      }
+
+      .signal b {
+        display: block;
+        margin-bottom: 8px;
+        color: #8af1d2;
+        font-size: 16px;
+      }
+
+      .signal span {
+        color: #aaa0b7;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .closing {
+        min-height: 820px;
+        padding: 120px 64px 300px;
+        background: linear-gradient(180deg, transparent, rgba(117, 63, 192, 0.15));
+      }
+
+      .closing h2 {
+        font-size: 58px;
+      }
+
+      .closing a {
+        display: inline-block;
+        margin-top: 28px;
+        padding: 15px 20px;
+        border-radius: 12px;
+        color: #0b1011;
+        background: #70f0c9;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="recording-intro" aria-hidden="true">
+      <div class="intro-content">
+        <div class="intro-mark">✦</div>
+        <h1>Keyword Spider</h1>
+        <p>Find the golden words on any page.</p>
+        <span class="intro-pill">100% local · privacy first</span>
+      </div>
+    </div>
+    <div class="demo-label">Keyword Spider · Live local demo</div>
+    <main>
+      <article>
+        <header class="hero">
+          <p class="eyebrow">Engineering field notes</p>
+          <h1>Building calm, reliable <strong>AI systems</strong></h1>
+          <p class="lead">The best intelligent products pair thoughtful machine learning infrastructure with clear human control, measurable quality, and dependable operations.</p>
+          <div class="privacy-chip">100% local analysis · No page content transmitted</div>
+        </header>
+
+        <section class="section">
+          <span class="section-number">01 / FOUNDATIONS</span>
+          <h2>Reliable machine learning infrastructure</h2>
+          <p><strong>Production AI systems</strong> need more than accurate models. They depend on observable pipelines, resilient services, and predictable model deployment.</p>
+          <p>Strong engineering teams design for graceful recovery, controlled releases, and fast feedback before scale turns small issues into expensive incidents.</p>
+          <div class="signal-grid">
+            <div class="signal"><b>Model deployment</b><span>Safe releases with measurable outcomes.</span></div>
+            <div class="signal"><b>System reliability</b><span>Resilient services that fail gracefully.</span></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-number">02 / QUALITY</span>
+          <h2>Continuous evaluation creates confidence</h2>
+          <p><strong>Continuous evaluation</strong> connects technical metrics with real user outcomes. It reveals drift, weak edge cases, and unexpected behavior before they become product problems.</p>
+          <p>A useful evaluation framework combines automated checks, human review, and transparent success criteria that every team can understand.</p>
+          <div class="signal-grid">
+            <div class="signal"><b>Human feedback</b><span>Quality signals grounded in real needs.</span></div>
+            <div class="signal"><b>Transparent metrics</b><span>Shared definitions of useful behavior.</span></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-number">03 / EXPERIENCE</span>
+          <h2>Human-centered AI earns trust</h2>
+          <p><strong>Human-centered AI</strong> makes its capabilities and limits easy to understand. People stay in control while automation handles repetitive work.</p>
+          <p>Clear interfaces, reversible actions, and privacy-first defaults transform sophisticated technology into a calm and dependable product experience.</p>
+          <div class="signal-grid">
+            <div class="signal"><b>Privacy-first design</b><span>Useful intelligence without hidden collection.</span></div>
+            <div class="signal"><b>Clear human control</b><span>Actions remain visible and reversible.</span></div>
+          </div>
+        </section>
+
+        <footer class="closing">
+          <span class="section-number">OPEN SOURCE · MANIFEST V3</span>
+          <h2>Find the golden words on any page.</h2>
+          <p>Keyword Spider extracts and ranks meaningful English keyphrases directly in your browser, then turns the result into a playful visual journey.</p>
+          <a href="https://github.com/behroozameri/keyword-spider">github.com/behroozameri/keyword-spider</a>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

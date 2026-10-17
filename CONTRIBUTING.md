@@ -32,6 +32,7 @@ Load `dist/keyword-spider-unpacked` as an unpacked browser extension.
 - Keep extraction independent from animation so results remain available if animation fails.
 - Add or update a focused test for behavioral changes.
 - Do not commit generated profiles, recordings, result files, or `dist/` artifacts.
+- Use the synthetic page under `demo/` for public screenshots and recordings.
 
 ## Test and build
 
