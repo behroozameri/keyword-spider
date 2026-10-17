@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Keyword Spider">
+  <rect width="128" height="128" rx="28" fill="#17101f"/>
+  <g fill="#bd8cff">
+    <polygon points="50,47 45,54 15,20 21,17"/>
+    <polygon points="46,57 44,65 8,53 11,46"/>
+    <polygon points="46,69 49,77 10,102 7,96"/>
+    <polygon points="51,79 58,83 34,119 27,115"/>
+    <polygon points="78,47 83,54 113,20 107,17"/>
+    <polygon points="82,57 84,65 120,53 117,46"/>
+    <polygon points="82,69 79,77 118,102 121,96"/>
+    <polygon points="77,79 70,83 94,119 101,115"/>
+  </g>
+  <ellipse cx="64" cy="75" rx="25" ry="30" fill="#70438f" stroke="#d9b7ff" stroke-width="3"/>
+  <ellipse cx="64" cy="47" rx="18" ry="16" fill="#8d58b0" stroke="#d9b7ff" stroke-width="3"/>
+  <g fill="#ff4566">
+    <circle cx="57" cy="43" r="3.5"/>
+    <circle cx="71" cy="43" r="3.5"/>
+    <circle cx="59" cy="51" r="2.5"/>
+    <circle cx="69" cy="51" r="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Keyword Spider",
+  "version": "1.0.0",
+  "description": "A playful spider that finds, ranks, and visits the most important English keyphrases on the current page.",
+  "homepage_url": "https://github.com/behroozameri/keyword-spider",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_title": "Keyword Spider",
+    "default_popup": "extension/popup.html",
+    "default_icon": {
+      "16": "extension/icons/icon-16.png",
+      "32": "extension/icons/icon-32.png",
+      "48": "extension/icons/icon-48.png",
+      "128": "extension/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "extension/icons/icon-16.png",
+    "32": "extension/icons/icon-32.png",
+    "48": "extension/icons/icon-48.png",
+    "128": "extension/icons/icon-128.png"
+  },
+  "incognito": "not_allowed",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "keyword-spider@behroozameri",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

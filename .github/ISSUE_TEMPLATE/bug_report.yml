@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a reproducible problem in Keyword Spider.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a problem. Remove personal information, page content, cookies, and credentials before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: Keyword Spider version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Chromium
+        - Brave
+        - Edge
+        - Firefox
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Open a public page...
+        2. Select Start Spider...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      render: shell
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed personal information, private page content, cookies, and credentials.
+          required: true

@@ -1,0 +1,36 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+!.env.example
+
+# Local Python environments
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor settings
+.idea/
+.vscode/
+
+# Browser profiles contain cookies, sessions, and other private data
+pw-profile-*/
+.spider-crawler/
+
+# Generated recordings and extraction results
+videos/
+*.webm
+result*.json
+results/
+
+# Playwright artifacts
+playwright-report/
+test-results/
+trace.zip
+
+# Packaged browser extension
+dist/

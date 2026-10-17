@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keyword Spider</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <img src="icons/icon-48.png" width="48" height="48" alt="">
+        <div>
+          <h1>Keyword Spider</h1>
+          <p>Find the golden words on this page.</p>
+        </div>
+      </header>
+
+      <section class="settings" aria-label="Spider settings">
+        <label>
+          <span>Results to collect</span>
+          <input id="max-results" type="number" min="1" max="500" value="200">
+        </label>
+        <label>
+          <span>Top results to visit</span>
+          <input id="top-targets" type="number" min="0" max="500" value="25">
+        </label>
+      </section>
+
+      <div class="actions">
+        <button id="start" class="primary" type="button">Start Spider</button>
+        <button id="stop" type="button">Remove</button>
+      </div>
+
+      <p id="status" role="status">Ready on the current tab.</p>
+      <p class="privacy">Runs locally. No page content is transmitted or collected.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
